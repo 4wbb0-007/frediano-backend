@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/data', function (PostActiveRequest $request) {
+Route::post('/data', function (PostDataRequest $request) {
     return DB::table('frediano_data')->insert([
         ...$request->validated(),
         "created_at" =>  \Carbon\Carbon::now(),
