@@ -37,7 +37,6 @@ class ActiveTest extends TestCase
             'is_active' => true,
         ]);
         $response = $this->getJson('/api/active');
-        dd($response->json());
 
         $this->assertEquals(1, DB::table('is_active')->count());
         $response->assertStatus(200);
